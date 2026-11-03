@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {"matcher": "*", "hooks": [
+        {"type": "command", "command": "py -3 hooks/guard_hook.py"},
+        {"type": "command", "command": "py -3 hooks/dump_hook.py"}
+      ]}
+    ],
+    "PostToolUse": [
+      {"matcher": "*", "hooks": [{"type": "command", "command": "py -3 hooks/dump_hook.py"}]}
+    ],
+    "ConfigChange": [
+      {"hooks": [{"type": "command", "command": "py -3 hooks/dump_hook.py"}]}
+    ],
+    "FileChanged": [
+      {"matcher": "RULES.md", "hooks": [{"type": "command", "command": "py -3 hooks/dump_hook.py"}]}
+    ]
+  }
+}

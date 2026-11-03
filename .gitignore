@@ -1,0 +1,21 @@
+# Secrets and environments
+.env
+*.key
+*.pem
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local results and logs that may contain sensitive data
+experiments/results/*.local.*
+*.local.jsonl
+*.log
+.pytest_cache/
+
+# Regenerated output of the hook probe
+experiments/probe/events.jsonl
+experiments/probe/guard.jsonl
+
+# Temporary Office files
+~$*
